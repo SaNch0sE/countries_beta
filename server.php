@@ -1,6 +1,6 @@
 <?php
 // Functions
-function savScore($conn, $name, $score)
+function savScore($connect, $name, $score)
 {
 	$sql = "INSERT INTO Scores (name, score) VALUES ($name, $score)";
     if ($connect->query($sql)){
@@ -10,20 +10,23 @@ function savScore($conn, $name, $score)
     }
     echo $response;
 }
-function getScores($conn)
+function getScores($connect)
 {
 	$sql = 'SELECT (name, score) FROM Scores';
-    $data = $connect->query($sql);
-	$dbdata = array();
-	if ($data->num_rows > 0) {
-	    // output data of each row
-	    while ($row = $data->fetch_assoc()) {
-	        $dbdata[] = $row;
-	    }
+    if ($data = $connect->query($sql)) {
+		$dbdata = array();
+		if ($data->num_rows > 0) {
+		    // output data of each row
+		    while ($row = $data->fetch_assoc()) {
+		        $dbdata[] = $row;
+		    }
+		} else {
+		    $dbdata = "No users";
+		}
+	    echo $dbdata;
 	} else {
-	    $dbdata = "No users";
-	}
-    echo $dbdata;
+        echo "Error: " . $sql . "<br>" . $connect->error;
+    }
 }
 // Config
 require_once 'config.php';
