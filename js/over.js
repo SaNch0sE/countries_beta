@@ -3,6 +3,9 @@ let nick = localStorage.getItem("name");
 let data = {"name": nick, "score": score};
 document.getElementById('return').innerText = score;
 document.getElementById('name').innerText = nick;
+ajax("savScore", data, (data)=>{
+			console.log(data);
+		});
 
 function timer(){
 	let obj = document.getElementById('timer_inp');
@@ -17,10 +20,7 @@ function timer(){
 
 	if(obj.innerHTML == 0){
 		setTimeout(function(){},1000);
-		ajax("savScore", data, (data)=>{
-			console.log(data);
 			location.href = "../index.html";
-		});
 	}
 	else {
 		setTimeout(timer,1000);
