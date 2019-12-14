@@ -12,7 +12,7 @@ function savScore($connect, $name, $score)
 }
 function getScores($connect)
 {
-	$sql = 'SELECT (name, score) FROM Scores';
+	$sql = 'SELECT name, score FROM Scores';
     if ($data = $connect->query($sql)) {
 		$dbdata = array();
 		if ($data->num_rows > 0) {
