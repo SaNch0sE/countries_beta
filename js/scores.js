@@ -6,6 +6,7 @@ function savAndMoveTo(data, path){
 let scores;
 let names;
 ajax("getScores", null, (data)=>{
+if(data !== "No users"){
 	let parent = document.getElementById('names');
 	for(let i=0; i < data.length; i++){
 		if (i <= 10) {
@@ -22,6 +23,16 @@ ajax("getScores", null, (data)=>{
 	        parent.append(li);
 	    }
     }
+}else{
+	let parent = document.getElementById('names');
+	let li = document.createElement("th");
+	li.innerHTML = "Немає рахунків";
+	parent.append(li);
+	parent = document.getElementById('scores');
+	let li = document.createElement("th");
+	li.innerHTML = "-";
+	parent.append(li);
+}
 });
 
 function play(){
