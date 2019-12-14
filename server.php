@@ -23,7 +23,7 @@ function getScores($connect)
 		} else {
 		    $dbdata = '{"data":"No users"}';
 		}
-	    echo $dbdata;
+	    echo json_encode($dbdata);
 	} else {
         echo "Error: " . $sql . "<br>" . $connect->error;
     }
