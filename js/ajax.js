@@ -1,5 +1,5 @@
 async function ajax(action, data, callback){
-	const url = 'controller.php';
+	const url = 'server.php';
 	let dataString = {
 		action: action,
 		data: data
