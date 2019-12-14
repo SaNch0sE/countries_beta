@@ -7,7 +7,7 @@ let scores;
 let names;
 ajax("getScores", null, (data)=>{
 console.log(data);
-if(data != "No users"){
+if(data.data !== "No users"){
 	let parent = document.getElementById('names');
 	for(let i=0; i < data.length; i++){
 		if (i <= 10) {
