@@ -32,8 +32,8 @@ function getScores($connect)
 require_once 'config.php';
 // Extensions/modules
 require 'connect.php';
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 // Get POST data
 $data = json_decode(file_get_contents('php://input'), true);
 $raw_data = serialize(json_decode(file_get_contents('php://input')));
