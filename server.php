@@ -2,7 +2,7 @@
 // Functions
 function savScore($connect, $name, $score)
 {
-	$sql = 'INSERT INTO Scores (name, score) VALUES ("$name", $score)';
+	$sql = 'INSERT INTO Scores (name, score) VALUES (\"$name\", $score)';
     if ($connect->query($sql)){
         $response = '{"data":"No errors"}';
     } else {
