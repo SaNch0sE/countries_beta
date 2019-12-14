@@ -36,7 +36,7 @@ if(data.data !== "No users"){
 
 function play(){
 	let name = document.getElementById('inp').value;
-	if(name == ''){
+	if(name != ''){
 		savAndMoveTo(name, "pages/game.html");
 	} 
 	else {
