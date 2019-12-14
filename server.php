@@ -6,7 +6,7 @@ function savScore($connect, $name, $score)
     if ($connect->query($sql)){
         $response = '{"data":"No errors"}';
     } else {
-        $response = "Error: " . $sql . "<br>" . $connect->error;
+        $response = '{"data": "Error: ' . $sql . '<br>' . $connect->error . '"}';
     }
     echo $response;
 }
