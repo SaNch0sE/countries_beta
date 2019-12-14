@@ -29,7 +29,7 @@ if(data !== "No users"){
 	li.innerHTML = "Немає рахунків";
 	parent.append(li);
 	parent = document.getElementById('scores');
-	let li = document.createElement("th");
+	li = document.createElement("th");
 	li.innerHTML = "-";
 	parent.append(li);
 }
