@@ -8,7 +8,7 @@
     define('DB_USER', 'aboyko');
 
     // DataBase Password
-    define('DB_PASSWORD', '3HF*rZF?');
+    define('DB_PASSWORD', 'password');
 
     // DataBase Host Name
     define('DB_HOST', 'localhost');
