@@ -1,4 +1,10 @@
-function timer(data){
+let score = localStorage.getItem("score");
+let nick = localStorage.getItem("name");
+let data = {"name": nick, "score": score};
+document.getElementById('return').innerText = score;
+document.getElementById('name').innerText = nick;
+
+function timer(){
 	let obj = document.getElementById('timer_inp');
 	console.log(obj.value);
 	if(obj.innerHTML > 4){
@@ -11,18 +17,14 @@ function timer(data){
 
 	if(obj.innerHTML == 0){
 		setTimeout(function(){},1000);
-		//ajax("savScore", data, ()=>{
-			location.href = "../index.html"
-		//});
-
+		ajax("savScore", data, (data)=>{
+			console.log(data);
+			location.href = "../index.html";
+		});
 	}
-	else
+	else {
 		setTimeout(timer,1000);
+	}
 }
-
-let score = localStorage.getItem("score");
-let nick = localStorage.getItem("name");
-
-document.getElementById('return').innerText = score;
 
 setTimeout(timer,1000);
