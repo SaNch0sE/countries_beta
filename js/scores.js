@@ -3,8 +3,6 @@ function savAndMoveTo(data, path){
 	localStorage.setItem("name", data);
 	location.href = path;
 }
-let scores;
-let names;
 ajax("getScores", null, (data)=>{
 console.log(data);
 if(data.data !== "No users"){
