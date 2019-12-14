@@ -4,7 +4,7 @@ function savScore($connect, $name, $score)
 {
 	$sql = "INSERT INTO Scores (name, score) VALUES ($name, $score)";
     if ($connect->query($sql)){
-        $response = '{"No errors"}';
+        $response = '{"data":"No errors"}';
     } else {
         $response = "Error: " . $sql . "<br>" . $connect->error;
     }
@@ -21,7 +21,7 @@ function getScores($connect)
 		        $dbdata[] = $row;
 		    }
 		} else {
-		    $dbdata = '{"No users"}';
+		    $dbdata = '{"data":"No users"}';
 		}
 	    echo $dbdata;
 	} else {
