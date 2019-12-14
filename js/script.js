@@ -26,7 +26,6 @@ let city = [[ "австралія", "австрія", "азербайджан", 
 	[ "ямайка", "японія"]];
 
 function savAndMoveTo(data, path){
-	localStorage.clear();
 	localStorage.setItem("score", data);
 	location.href = path;
 }
