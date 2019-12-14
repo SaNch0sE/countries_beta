@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/icon.ico" type="image/icon">
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <title>Країни світу</title>
+</head>
+    <body>
+		<style type="text/css">
+			@font-face {
+				font-family: '8BITWONDERNominal';
+				src: url("assets/8-bit_wo-webfont.woff") format("woff"),
+				url("assets/8-bit_wo-webfont.otf") format("opentype");
+			}
+			@font-face {
+				font-family: 'regular';
+				src: url("assets/Roboto-Regular.ttf");
+			}
+			body{
+				background: url("assets/img/Space.jpg");
+				font-family: Arial, Helvetica, sans-serif;
+				background-color: black;
+				color: white;
+				overflow: hidden;
+				padding-top: 5%;
+				padding-left: 8%;
+			}
+			h3{
+				font-family: '8BITWONDERNominal';
+				font-weight: normal;
+				font-style: normal;
+			}
+			h4{
+				margin: 0;
+				margin-bottom: 1%;
+			}
+			.Table {
+				max-width: 60%;
+				margin-top:1.5%;
+				margin-bottom:1.5%;
+				background-color:#eee;
+				color: black;
+				border-collapse:collapse; 
+			}
+			.Table th {
+				padding:5px;
+				border:1px solid #000; 
+			}
+			input{
+				font-family: regular;
+				width: 30%;
+				display: flex;
+				flex-direction: row;
+				background-color: rgb(201, 200, 190);
+				border: solid 1.5px;
+				border-top-left-radius: 25px;
+				border-bottom-left-radius: 25px;
+				border-top-right-radius: 25px;
+				border-bottom-right-radius: 25px;
+				outline: none;
+				flex-direction: row;
+				flex: 1;
+				padding-left: 12px;
+				color: rgb(14, 12, 12);
+				font-size: 30px;
+			}
+			p{
+				margin: 0;
+				font-size: 30px;
+			}
+			/*-----------------------CSS Earth-----------------------*/
+			#main{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				left: 25%;
+				top: 2%;
+				z-index: -100;
+			}
+			.flex {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-flow: row nowrap;
+				min-height: 100vh;
+				min-width: 100%;
+				perspective: 2000px;
+				  overflow: hidden;
+			}
+			.filter {
+				filter: brightness(90%) grayscale(60%) saturate(2) hue-rotate(10deg);
+			}
+			.earth {
+				width: 200px;
+				height: 200px;
+				background: url("assets/img/map.jpg"); /*url("ahegao.gif")*/
+				background-size: cover;
+				transform: rotate(-10deg) scale(3);
+				border-radius: 50%;
+				box-shadow: inset 50px -50px 120px black, inset 10px 10px 50px black, inset -10px -10px 50px black;
+				z-index: -99;
+				animation: backgroundposition 11s infinite linear;
+			}
+			@keyframes backgroundposition {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 200% 50%;
+				}
+			}
+			@keyframes rotate {
+				0% {
+					transform: rotatez(0);
+				}
+				100% {
+					transform: rotatez(360deg);
+				}
+			}
+		</style>
+		<!--embed name="GoodEnough" src="Hentai.mp3" loop="true" hidden="true" autostart="true"-->
+		<h1>Країни світу</h1>
+		<h4>Над проектом працювали студенти групи К17 1/9:</h4>
+		<h4>Бойко Олександр</h4>
+		<h4>Кіблик Іван</h4>
+		<h4>Резніченко Олександр</h4>
+		<p>Введіть ім'я для початку гри:</p><input required autocomplete="off" tabindex="1" type="text" onkeypress="enter(event); document.getElementById('inp').focus();" placeholder="Наприклад name123" id="inp" autofocus>
+		<h2>Топ 10 гравців</h2>
+		<table class="Table">
+			<tr id="names">
+				
+			</tr>
+			<tr id="scores">
+				
+			</tr>
+		</table>
+		<button type="button" onclick="play()"><h3>START GAME<h3></button>
+		<div id="main">
+			<main class="flex">
+				<div class="earth filter"></div>
+			</main>
+		</div>
+		<script text="text/javascript" src="js/scores.js"></script>
+	</body>
+</html>

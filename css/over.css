@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(29, 32, 32);
+    color: rgb(223, 222, 222);
+    font-family: '8BITWONDERNominal';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+	overflow: hidden;
+}
+#return{
+    font-size: 100px;
+    top: 15%;
+	color: rgb(238, 34, 34);
+}
+#h1{
+    font-size: 110px;
+}
+#h2{
+    font-size: 75px;
+}
+#h3{
+	margin-top: 0%;
+    font-size: 100px;
+    color: rgb(110, 227, 64);
+}
+#timer_inp{
+	margin-top: 0%;
+	font-size: 150px;
+}
+#gameOver{
+    margin-top: 4%;
+    font-size: 150px;
+}
+@font-face {
+	font-family: '8BITWONDERNominal';
+	src: url("../assets/17679.ttf");
+}

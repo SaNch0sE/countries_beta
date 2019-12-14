@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/icon.ico" type="image/icon">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.svgworldmap-2.1.src.js"></script>
+    <title>Країни світу</title>
+</head>
+    <body>
+		<header>
+			<h3 id="timer_inp"></h3>
+			<div id="global-map"></div>
+				<div id="place"></div>
+					<script type="text/javascript">
+						/* Country click handler */
+						jQuery(document).ready(function(){
+							jQuery('#place').SVGWorldMap({
+								bottom:20, /* Bottom padding (removes antarctica from map) */
+								clickhandler :'', /* Click handler function name */
+								c : {} /* Country classes */
+								});
+
+							});
+				</script>
+			</div>
+		</header>
+		<main>
+			<div id="charr">
+				<form id="from">
+					<input autocomplete="off" tabindex="1" type="text" onkeypress="enter(event); document.getElementById('inp').focus();" placeholder="Введи країну будь ласка..." id="inp" autofocus>
+					<button type="button" onclick="main()"><span id="galochka"><i>&gt;</i></span></button>
+				</form>
+				<div class="score">
+					<h2 >SCORE:<span><h3 id="score"></h3></span></h2>
+				</div>
+				<div class="heart">
+					<img id="pic1" class="pic" width="50px" src="../assets/img/pixel-heart.png">
+					<img id="pic2" class="pic" width="50px" src="../assets/img/pixel-heart.png">
+					<img id="pic3" class="pic" width="50px" src="../assets/img/pixel-heart.png">
+				</div>
+				<div id="botOtvet">
+					<img src="../assets/img/robot.gif" alt="Анимация робота" width="250px" height="200px" id="robot">
+					<p id="out"></p>
+				</div>
+			</div>
+		</main>
+		<script text="text/javascript" src="../js/script.js"></script>
+	</body>
+</html>
