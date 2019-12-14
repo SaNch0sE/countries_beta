@@ -21,7 +21,7 @@ function getScores($connect)
 		        $dbdata[] = $row;
 		    }
 		} else {
-		    $dbdata = "No users";
+		    $dbdata = "{No users}";
 		}
 	    echo $dbdata;
 	} else {
